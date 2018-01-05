@@ -13,3 +13,26 @@
 <body onload="hide_preloader();" <?php body_class('home'); ?>>
 <!-- Page wrap -->
 <div id="page-wrap">
+	<!-- Preloader -->
+
+    <div id="preloader">
+
+        <div class="inner">
+
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="">
+
+        </div>
+
+    </div>
+
+    <!-- End / Preloader -->
+
+    <!-- Video fixed -->
+
+    <div id="video-fixed">
+        <div id="video-custom">
+            <a id="video" class="player" data-property="{videoURL:'http://www.youtube.com/watch?v=RdIh8GiVR9I',containment:'#video-custom', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, addRaster:false, quality:'default'}"></a>
+        </div>
+    </div>
+
+    <!-- End / Video fixed -->
