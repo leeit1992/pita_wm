@@ -23,8 +23,8 @@ function pita_wm_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'size-thumbnail-lasted-post', 370, 267, array( 'center', 'center' ) );
-	add_image_size( 'size-thumbnail-teams', 370, 313, array( 'center', 'center' ) );
+	add_image_size( 'pita-thumbnail-370x267', 370, 267, array( 'center', 'center' ) );
+	add_image_size( 'pita-thumbnail-370x313', 370, 313, array( 'center', 'center' ) );
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(

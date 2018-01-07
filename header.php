@@ -27,12 +27,32 @@
 
     <!-- End / Preloader -->
 
-    <!-- Video fixed -->
+    <?php if ( is_home() ): ?>
+        <!-- Video fixed -->
 
-    <div id="video-fixed">
-        <div id="video-custom">
-            <a id="video" class="player" data-property="{videoURL:'http://www.youtube.com/watch?v=RdIh8GiVR9I',containment:'#video-custom', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, addRaster:false, quality:'default'}"></a>
+        <div id="video-fixed">
+            <div id="video-custom">
+                <a id="video" class="player" data-property="{videoURL:'http://www.youtube.com/watch?v=RdIh8GiVR9I',containment:'#video-custom', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, addRaster:false, quality:'default'}"></a>
+            </div>
         </div>
-    </div>
 
-    <!-- End / Video fixed -->
+        <!-- End / Video fixed -->
+    <?php else: ?>
+        <nav id="navigation" class="nav-ver1 nav-static">
+        
+            <div class="container">
+                <div class="row">
+            
+                    <div class="logo"><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt=""></a></div>
+            
+                    <div class="menu-mobile"><p>Menu</p></div>
+        <?php
+        wp_nav_menu( array(
+            'theme_location' => 'primary'
+        ) );
+        ?>
+                </div>
+            </div>
+        
+        </nav>
+    <?php endif ?>
