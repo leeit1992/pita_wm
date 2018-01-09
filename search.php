@@ -1,24 +1,36 @@
-<?php get_header(); ?>
-<section id="content" role="main">
-<?php if ( have_posts() ) : ?>
-<header class="header">
-<h1 class="entry-title"><?php printf( __( 'Search Results for: %s', 'blankslate' ), get_search_query() ); ?></h1>
-</header>
-<?php while ( have_posts() ) : the_post(); ?>
-<?php get_template_part( 'entry' ); ?>
-<?php endwhile; ?>
-<?php get_template_part( 'nav', 'below' ); ?>
-<?php else : ?>
-<article id="post-0" class="post no-results not-found">
-<header class="header">
-<h2 class="entry-title"><?php _e( 'Nothing Found', 'blankslate' ); ?></h2>
-</header>
-<section class="entry-content">
-<p><?php _e( 'Sorry, nothing matched your search. Please try again.', 'blankslate' ); ?></p>
-<?php get_search_form(); ?>
-</section>
-</article>
-<?php endif; ?>
-</section>
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php
+get_header();
+global $pita_wm_option;
+echo do_shortcode(isset($pita_wm_option['pita_wm-post-detail-head']) ? $pita_wm_option['pita_wm-post-detail-head'] : ''); ?>
+?>
+<!-- Blog -->
+<div id="content-blog">
+    <div class="container">
+        <div class="row">
+            <!-- Blog Left -->
+            <div class="col-md-9">
+            	<?php if ( have_posts() ) : ?>
+            	<?php while ( have_posts() ) : the_post(); ?>
+				<?php get_template_part( 'entry' ); ?>
+				<?php endwhile; ?>
+				<?php get_template_part( 'nav', 'below' ); ?>
+				<?php else : ?>
+	            <p><?php _e( 'Sorry, nothing matched your search. Please try again.', 'blankslate' ); ?></p>
+				<?php get_search_form(); ?>
+				<?php endif; ?>
+            </div>
+
+            <div class="col-md-3 blog-list-right">
+
+                <?php dynamic_sidebar('pita_wm_1'); ?>
+
+            <!-- End Blog Right --> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php 
+echo do_shortcode(isset($pita_wm_option['pita_wm-post-detail-footer']) ? $pita_wm_option['pita_wm-post-detail-footer'] : '');
+get_footer(); 
+?>

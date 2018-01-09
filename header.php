@@ -13,7 +13,7 @@ global $pita_wm_option;
     <!--[if lt IE 9]> <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script> <![endif]-->
     <?php wp_head(); ?>
 </head>
-<body onload="hide_preloader();" <?php body_class('home'); ?>>
+<body onload="hide_preloader();">
 <!-- Page wrap -->
 <div id="page-wrap">
 	<!-- Preloader -->
@@ -46,7 +46,7 @@ global $pita_wm_option;
             <div class="container">
                 <div class="row">
             
-                    <div class="logo"><a href="#"><img src="<?php echo isset( $pita_wm_option['pissta_wm-logo'] ) ? $pita_wm_option['pissta_wm-logo']['url'] : ''; ?>" alt=""></a></div>
+                    <div class="logo"><a href="<?php echo home_url(); ?>"><img src="<?php echo isset( $pita_wm_option['pita_wm-logo'] ) ? $pita_wm_option['pita_wm-logo']['url'] : ''; ?>" alt=""></a></div>
             
                     <div class="menu-mobile"><p>Menu</p></div>
         <?php

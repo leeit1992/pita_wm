@@ -68,6 +68,7 @@ function pita_wm_scripts() {
 	wp_enqueue_style( 'pita_wm-fonts-googleapis', 'http://fonts.googleapis.com/css?family=Arvo:400,400italic%7CMontserrat:400,700', array() );
 	wp_enqueue_style( 'pita_wm-bootstrap', get_template_directory_uri(). '/assets/css/bootstrap.css', array(), '4.9.1' );
 	wp_enqueue_style( 'pita_wm-main-style', get_template_directory_uri(). '/assets/css/main-style.css', array(), '4.9.1' );
+	wp_enqueue_style( 'pita_wm-blog', get_template_directory_uri(). '/assets/css/blog.css', array(), '4.9.1' );
 	wp_enqueue_style( 'pita_wm-icomoon', get_template_directory_uri(). '/assets/css/icomoon.css', array(), '4.9.1' );
 	wp_enqueue_style( 'pita_wm-font-awesome', get_template_directory_uri(). '/assets/css/font-awesome.min.css', array(), '4.9.1' );
 	wp_enqueue_style( 'pita_wm-carousel', get_template_directory_uri(). '/assets/css/owl.carousel.css', array(), '4.9.1' );
@@ -108,8 +109,8 @@ add_action( 'widgets_init', 'pita_theme_slug_widgets_init' );
 function pita_theme_slug_widgets_init()
 {
 	register_sidebar( array (
-		'name' => __( 'Sidebar Widget Area', 'pita_wm' ),
-		'id' => 'primary-widget-area',
+		'name' => __( 'Sidebar Right', 'pita_wm' ),
+		'id' => 'pita_wm_1',
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => "</li>",
 		'before_title' => '<h3 class="widget-title">',
