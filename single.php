@@ -12,6 +12,9 @@ echo do_shortcode(isset($pita_wm_option['pita_wm-post-detail-head']) ? $pita_wm_
             	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             		<?php get_template_part( 'entry' ); ?>
 				<?php endwhile; endif; ?>
+                <?php if ( comments_open() || get_comments_number() ) :
+                    comments_template();
+                endif; ?>
                 
             </div>
             <!-- End Blog Left -->

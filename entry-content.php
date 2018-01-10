@@ -41,13 +41,13 @@
                 <a href=""><?php the_author(); ?></a>
             </li>
             <li>
-                <a href="">No Tags</a>
+                <?php the_tags(); ?>
             </li>
             <li>
-                <a href="" title="Design">Design</a>
+                <?php the_category(); ?>
             </li>
             <li>
-                <a href="">20 Comments</a>
+                <a href=""><?php echo get_comment_pages_count(); ?> Comments</a>
             </li>
         </ul>
     </div>

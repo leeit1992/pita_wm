@@ -1,17 +1,31 @@
-<?php get_header(); ?>
-<section id="content" role="main">
-<header class="header">
-<h1 class="entry-title"><?php 
-if ( is_day() ) { printf( __( 'Daily Archives: %s', 'blankslate' ), get_the_time( get_option( 'date_format' ) ) ); }
-elseif ( is_month() ) { printf( __( 'Monthly Archives: %s', 'blankslate' ), get_the_time( 'F Y' ) ); }
-elseif ( is_year() ) { printf( __( 'Yearly Archives: %s', 'blankslate' ), get_the_time( 'Y' ) ); }
-else { _e( 'Archives', 'blankslate' ); }
-?></h1>
-</header>
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-<?php get_template_part( 'entry' ); ?>
-<?php endwhile; endif; ?>
-<?php get_template_part( 'nav', 'below' ); ?>
-</section>
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php
+get_header();
+global $pita_wm_option;
+echo do_shortcode(isset($pita_wm_option['pita_wm-post-detail-head']) ? $pita_wm_option['pita_wm-post-detail-head'] : ''); ?>
+?>
+<!-- Blog -->
+<div id="content-blog">
+    <div class="container">
+        <div class="row">
+            <!-- Blog Left -->
+            <div class="col-md-9">
+            	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+				<?php get_template_part( 'entry' ); ?>
+				<?php endwhile; endif; ?>
+				<?php get_template_part( 'nav', 'below' ); ?>
+            </div>
+
+            <div class="col-md-3 blog-list-right">
+
+                <?php dynamic_sidebar('pita_wm_1'); ?>
+
+            <!-- End Blog Right --> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php 
+echo do_shortcode(isset($pita_wm_option['pita_wm-post-detail-footer']) ? $pita_wm_option['pita_wm-post-detail-footer'] : '');
+get_footer(); 
+?>

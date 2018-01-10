@@ -31,7 +31,7 @@
     <?php get_template_part( 'entry', 'meta' ); ?>
 
     <div class="blog-title">
-        <span class="icofont moon-<?php echo $postFormat; ?>"></span>
+        <span class="icofont moon-<?php echo $icon; ?>"></span>
         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
             <h2><?php the_title(); ?></h2>
         </a>
@@ -41,13 +41,14 @@
                 <a href=""><?php the_author(); ?></a>
             </li>
             <li>
-                <a href="">No Tags</a>
+                <?php the_tags(); ?>
             </li>
             <li>
-                <a href="" title="Design">Design</a>
+                <?php the_category( '/', '//', false ); ?>
+
             </li>
             <li>
-                <a href="">20 Comments</a>
+                <a href=""><?php echo get_comment_pages_count(); ?> Comments</a>
             </li>
         </ul>
     </div>
