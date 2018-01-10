@@ -44,8 +44,7 @@
                 <?php the_tags(); ?>
             </li>
             <li>
-                <?php the_category( '/', '//', false ); ?>
-
+                <?php the_category(); ?>
             </li>
             <li>
                 <a href=""><?php echo get_comment_pages_count(); ?> Comments</a>
