@@ -1,24 +1,23 @@
-<?php if ( get_comment_pages_count() > 0 ): ?>
+<?php
+    $countComment = wp_count_comments( get_the_ID() );
+?>
+<?php if ( $countComment->total_comments > 0 ): ?>
     <div class="blog-comment">
         <h2 class="title-right-blog">
             Comments
-            <span>(<?php echo get_comment_pages_count(); ?>)</span>
+            <span>(<?php echo $countComment->total_comments; ?>)</span>
         </h2>
         <?php foreach ($comments as $comment): ?>
 
             <div class="comment-item">
                 <div class="img-comment">
-                    <img src="<?php get_avatar( get_comment_author_email()); ?>" alt="">
+                    <?php echo get_avatar( get_comment_author_email()); ?>
                 </div>
                 <span class="user-comment"><?php comment_author(); ?></span>
                 <span class="date-comment"><?php comment_date(); ?> at <?php comment_time(); ?></span>
                 <p class="detail-comment">
                     <?php echo get_comment_text(); ?>
                 </p>
-                <a class="reply-comment" title="Reply">
-                    <span class="fa-reply"></span>
-                    Reply
-                </a>
             </div>
         <?php endforeach ?>
     </div>

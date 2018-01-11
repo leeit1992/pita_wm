@@ -44,10 +44,11 @@
                 <?php the_tags(); ?>
             </li>
             <li>
-                <?php the_category(); ?>
+                <?php the_category( ', ' ); ?>
             </li>
             <li>
-                <a href=""><?php echo get_comment_pages_count(); ?> Comments</a>
+                <?php $countComment = wp_count_comments( get_the_ID() ); ?>
+                <a href=""><?php echo $countComment->total_comments; ?> Comments</a>
             </li>
         </ul>
     </div>
