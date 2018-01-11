@@ -38,18 +38,24 @@
         <ul>
             <li>
                 Posted by
-                <a href=""><?php the_author(); ?></a>
+                <a href="#" title="<?php echo get_the_author_link(); ?>"><?php the_author(); ?></a>
             </li>
-            <li>
-                <?php the_tags(); ?>
-            </li>
-            <li>
-                <?php the_category( ', ' ); ?>
-            </li>
-            <li>
-                <?php $countComment = wp_count_comments( get_the_ID() ); ?>
-                <a href=""><?php echo $countComment->total_comments; ?> Comments</a>
-            </li>
+            <?php if ( has_tag() ): ?>
+                <li>
+                    <?php the_tags(); ?>
+                </li>
+            <?php endif ?>
+            <?php if ( has_category() ): ?>
+                <li>
+                    <?php the_category( ', ' ); ?>
+                </li>
+            <?php endif ?>
+            <?php $countComment = wp_count_comments( get_the_ID() ); ?>
+            <?php if ( $countComment->total_comments > 0): ?>
+                <li>
+                    <a href="#" title="total comment"><?php echo $countComment->total_comments; ?> Comments</a>
+                </li>
+            <?php endif ?>
         </ul>
     </div>
 

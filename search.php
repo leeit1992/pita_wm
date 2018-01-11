@@ -2,7 +2,6 @@
 get_header();
 global $pita_wm_option;
 echo do_shortcode(isset($pita_wm_option['pita_wm-post-detail-head']) ? $pita_wm_option['pita_wm-post-detail-head'] : ''); ?>
-?>
 <!-- Blog -->
 <div id="content-blog">
     <div class="container">
@@ -15,8 +14,9 @@ echo do_shortcode(isset($pita_wm_option['pita_wm-post-detail-head']) ? $pita_wm_
 				<?php endwhile; ?>
 				<?php get_template_part( 'nav', 'below' ); ?>
 				<?php else : ?>
-	            <p><?php _e( 'Sorry, nothing matched your search. Please try again.', 'blankslate' ); ?></p>
-				<?php get_search_form(); ?>
+                <div class="blog-title">
+                   <a title="result search"><h2><?php _e( 'Sorry, nothing matched your search. Please try again.', 'pita_wm' ); ?></h2></a>
+                </div>
 				<?php endif; ?>
             </div>
 

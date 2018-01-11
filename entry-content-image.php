@@ -3,6 +3,6 @@
 ?>
 <div class="blog-image">
     <a href="#">
-        <img src="<?php echo wp_get_attachment_url( $gallery[0] ); ?>" alt="">
+        <img src="<?php echo wp_get_attachment_url( $gallery[0] ); ?>" alt="<?php the_title(); ?>">
     </a>
 </div>
