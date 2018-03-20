@@ -69,11 +69,11 @@ add_action( 'widgets_init', 'pita_theme_slug_widgets_init' );
 function pita_theme_slug_widgets_init()
 {
 	register_sidebar( array (
-		'name' => __( 'Sidebar Right', 'pita_wm' ),
-		'id' => 'pita_wm_1',
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+		'name'         => __( 'Sidebar Right', 'pita_wm' ),
+		'id'           => 'pita_wm_1',
+		'before_widget'=> '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => "</li>",
 		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'after_title'  => '</h3>',
 	) );
 }

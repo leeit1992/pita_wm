@@ -49,27 +49,27 @@ function pita_wm_register_required_plugins() {
 	$plugins = array(
 
 		array(
-			'name'      => 'WPBakery Visual Composer',
-			'slug'      => 'wm-js_composer',
-			'source'    => get_template_directory() . '/plugins/js_composer.zip',
-			'required'  => true,
-			'version'   => '5.1.1',
+			'name'    => 'WPBakery Visual Composer',
+			'slug'    => 'wm-js_composer',
+			'source'  => get_template_directory() . '/plugins/js_composer.zip',
+			'required'=> true,
+			'version' => '5.1.1',
 		),
 
 		array(
-			'name'      => 'Redux Framework',
-			'slug'      => 'wm-redux-framework',
-			'source'    => get_template_directory() . '/plugins/redux-framework.zip',
-			'required'  => true,
-			'version'   => '3.6',
+			'name'    => 'Redux Framework',
+			'slug'    => 'wm-redux-framework',
+			'source'  => get_template_directory() . '/plugins/redux-framework.zip',
+			'required'=> true,
+			'version' => '3.6',
 		),
 
 		array(
-			'name'      => 'WM required',
-			'slug'      => 'wm-required',
-			'source'    => get_template_directory() . '/plugins/wm-required.zip',
-			'required'  => true,
-			'version'   => '1.0',
+			'name'    => 'WM required',
+			'slug'    => 'wm-required',
+			'source'  => get_template_directory() . '/plugins/wm-required.zip',
+			'required'=> true,
+			'version' => '1.0',
 		)	
 
 	);
