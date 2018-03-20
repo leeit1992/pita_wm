@@ -16,6 +16,8 @@ function pita_wm_scripts() {
 	wp_enqueue_style( 'pita_wm-animate', get_template_directory_uri(). '/assets/css/animate.css', array(), '4.9.1' );
 	wp_enqueue_style( 'pita_wm-magnific-popup', get_template_directory_uri(). '/assets/css/magnific-popup.css', array(), '4.9.1' );
 	wp_enqueue_style( 'pita_wm-color-2', get_template_directory_uri(). '/assets/css/color/color-2.css', array(), '4.9.1' );
+	wp_enqueue_style( 'pita_wm-add-codeshort', get_template_directory_uri(). '/assets/css/add-shortcode.css', array(), '4.9.1' );
+
 
 	// Theme stylesheet.
 	wp_enqueue_style( 'pita_wm-style', get_stylesheet_uri() );
